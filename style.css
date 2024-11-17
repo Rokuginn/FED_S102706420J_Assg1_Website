@@ -443,6 +443,7 @@
   font-family: "Open Sans", sans-serif;
   margin-bottom: 5rem;
   font-size: 3rem;
+  font-weight: 300;
 }
 
 .devices__wrapper {
@@ -606,5 +607,115 @@
 
   .devices__card:hover {
     transform: scale(1.03);
+  }
+}
+
+/* Games Section */
+
+.games {
+  padding: 4rem;
+  background: linear-gradient(-45deg, #2a2a2b, #404042, #252525, #2f3030);
+  background-size: 400% 400%;
+  animation: gradient 7s ease infinite;
+}
+
+.games__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.games h1 {
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  text-align: center;
+  padding-top: 0px;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.games__container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.game__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+
+.game__card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.game__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.game__info h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+}
+
+.game__info button {
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #092f94;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+
+
+.game__card:hover {
+  transform: scale(1.05);
+}
+
+.game__card:hover .game__info {
+  transform: translateY(0);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+  .games__container {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .games__container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .games__container {
+      grid-template-columns: 1fr;
   }
 }
