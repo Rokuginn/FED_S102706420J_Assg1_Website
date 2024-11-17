@@ -573,3 +573,38 @@
   margin-top: 16px;
 }
 
+@media screen and (max-width: 1300px) {
+  .devices__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .devices__card {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* Media query for screens <= 768px */
+@media screen and (max-width: 768px) {
+  .devices__wrapper {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .devices h1 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .devices__card {
+    height: 375px;
+    margin: 0;
+  }
+
+  .devices__card:hover {
+    transform: scale(1.03);
+  }
+}

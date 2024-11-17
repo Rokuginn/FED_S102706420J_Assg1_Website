@@ -1,12 +1,15 @@
 // Function 0: To create a mobile menu for smaller screens
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
-const navlogo = document.querySelector('#navbar__logo');
+const navLogo = document.querySelector('#navbar__logo');
 
+// Display Mobile Menu
 const mobileMenu = () => {
-    menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
-}
+  menu.classList.toggle('is-active');
+  menuLinks.classList.toggle('active');
+};
+
+menu.addEventListener('click', mobileMenu);
 // Function 1: To adjust the hero section horizontal scrolling
 let currentSlide = 0;
 
