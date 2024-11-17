@@ -509,23 +509,31 @@
 }
 
 .devices__card {
-  position: relative;
+  margin: 10px;
+  height: 425px;
+  width: 400px; /* Adjusted width */
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  align-items: center;
+  color: #fff;
+  transition: 0.3s ease-in;
+  background-size: cover; /* Control image size */
+  background-position-x: 100%;
+  background-position: center; /* Position image at top */
+  background-repeat: no-repeat;
   padding: 20px;
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  transition: transform 0.3s ease-in;
-  overflow: hidden;
+  position: relative;
 }
 
-.devices__card h2, .devices__card p, .devices__card button {
-  font-family: 100;
-  text-align: start;
-  justify-content: center;
-  z-index: 4;
+.devices__card h2,
+.devices__card p,
+.devices__card .devices__btn {
+  z-index: 2;
   margin: 10px 0;
   width: 100%;
+  text-align: center;
 }
 
 .devices__card::before {
