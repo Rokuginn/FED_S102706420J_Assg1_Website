@@ -8,12 +8,12 @@ const mobileMenu = () => {
     menuLinks.classList.toggle('active');
 }
 // Function 1: To adjust the hero section horizontal scrolling
-menu.addEventListener('click', mobileMenu);
-
 let currentSlide = 0;
 
 function showSlide(index) {
     const slides = document.querySelectorAll('.slide');
+    const slideContents = document.querySelectorAll('.slide-content');
+    
     if (index >= slides.length) {
         currentSlide = 0;
     } else if (index < 0) {
@@ -21,11 +21,18 @@ function showSlide(index) {
     } else {
         currentSlide = index;
     }
+    
     const offset = currentSlide * slides[0].clientWidth;
     document.querySelector('.slider').scrollTo({
         left: offset,
         behavior: 'smooth'
     });
+
+    // Remove fade-in class from all slide contents
+    slideContents.forEach(content => content.classList.remove('fade-in'));
+
+    // Add fade-in class to the current slide content
+    slideContents[currentSlide].classList.add('fade-in');
 }
 
 function nextSlide() {
@@ -35,3 +42,8 @@ function nextSlide() {
 function prevSlide() {
     showSlide(currentSlide - 1);
 }
+
+// Initial fade-in for the first slide
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.slide-content')[0].classList.add('fade-in');
+});
