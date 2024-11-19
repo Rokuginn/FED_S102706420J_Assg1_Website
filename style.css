@@ -96,7 +96,7 @@
     align-items: center;
     padding: 10px 20px;
     height: 100%;
-    width: 100%;
+    width: 200px;
     border: none;
     outline: none;
     border-radius: 6px;
@@ -104,7 +104,7 @@
     background: -webkit-linear-gradient(to right, #f8b500, #fceabb);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #f8b500, #fceabb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     text-decoration: none;
-    color:#021B79;
+    color:#ffffff;
     transition: all 0.3s ease;
     position: relative;
     left: 250px;
@@ -153,8 +153,9 @@
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 60vh;
+        height: 70vh;
         font-size: 1.6rem;
+        align-items: center;
       }
       #navbar__logo {
         padding-left: 200px;
@@ -191,13 +192,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 80%;
+        width: 50%;
         height: 80px;
-        margin: 0;
+        margin: 0 auto;
         position: relative;
         left: 0;
       }
       #mobile-menu {
+        height: 50px;
         position: absolute;
         top: 20%;
         right: 5%;
@@ -808,6 +810,7 @@
   
   .devices__card {
     width : 400px;
+    border-radius: 4px;
   }
   
  .navbar__item{
@@ -822,9 +825,10 @@
     }
   
     .navbar__btn {
-      padding: 5rem 10rem;
-      width: 100%;
+      padding: 0rem 1rem;
+      width: 400px;
     }
+
 
   
     .button {
@@ -860,6 +864,7 @@
   }
   .button {
     left: -30px;
+    
     
 
   }
