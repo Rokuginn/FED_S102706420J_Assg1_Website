@@ -28,6 +28,7 @@ This project is currently under development. Upcoming features include:
 - **Purchasing System Perhaps who knows**
 - **Latest news and blog articles**
 - **Enhanced animations and responsiveness**
+- **Other Pages Such as Products,Games,Sign Up Page,**
 
 ## 💻 Technologies Used
 - **HTML5**: For the structure and content of the website.  
