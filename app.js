@@ -50,3 +50,72 @@ function prevSlide() {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.slide-content')[0].classList.add('fade-in');
 });
+
+
+// Function 2: Filter Value
+document.getElementById('product-filter').addEventListener('change', function() {
+    const filterValue = this.value;
+    const items = document.querySelectorAll('.product__item');
+
+    items.forEach(item => {
+        if (filterValue === 'all' || item.getAttribute('data-type') === filterValue) {
+            item.style.visibility = 'visible';
+            item.style.position = 'relative';
+        } else {
+            item.style.visibility = 'hidden';
+            item.style.position = 'absolute';
+        }
+    });
+});
+
+
+// Function 3: Infinite Scroll for Color Shells
+const shellsContainer = document.querySelector('.color-shells__grid');
+const shellCards = Array.from(shellsContainer.children);
+const cardWidth = shellCards[0].offsetWidth + parseInt(getComputedStyle(shellCards[0]).marginRight);
+
+// Clone initial cards
+shellCards.forEach(card => {
+    const clone = card.cloneNode(true);
+    shellsContainer.appendChild(clone);
+});
+
+// Left scroll with infinite loop
+document.querySelector('.scroll-left').addEventListener('click', () => {
+    shellsContainer.scrollBy({
+        left: -cardWidth,
+        behavior: 'smooth'
+    });
+
+    // Check if we're at the start
+    if (shellsContainer.scrollLeft <= 0) {
+        // Disable smooth scrolling temporarily
+        shellsContainer.style.scrollBehavior = 'auto';
+        // Jump to the cloned set
+        shellsContainer.scrollLeft = shellsContainer.scrollWidth / 2;
+        // Re-enable smooth scrolling
+        setTimeout(() => {
+            shellsContainer.style.scrollBehavior = 'smooth';
+        }, 0);
+    }
+});
+
+// Right scroll with infinite loop
+document.querySelector('.scroll-right').addEventListener('click', () => {
+    shellsContainer.scrollBy({
+        left: cardWidth,
+        behavior: 'smooth'
+    });
+
+    // Check if we're at the end
+    if (shellsContainer.scrollLeft >= shellsContainer.scrollWidth / 2) {
+        // Disable smooth scrolling temporarily
+        shellsContainer.style.scrollBehavior = 'auto';
+        // Jump back to the original set
+        shellsContainer.scrollLeft = 0;
+        // Re-enable smooth scrolling
+        setTimeout(() => {
+            shellsContainer.style.scrollBehavior = 'smooth';
+        }, 0);
+    }
+});
