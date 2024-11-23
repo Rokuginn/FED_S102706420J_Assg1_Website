@@ -119,3 +119,4 @@ document.querySelector('.scroll-right').addEventListener('click', () => {
         }, 0);
     }
 });
+
