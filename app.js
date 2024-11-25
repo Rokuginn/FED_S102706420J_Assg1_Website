@@ -120,75 +120,62 @@ document.querySelector('.scroll-right').addEventListener('click', () => {
     }
 });
 
-//Function 4: Add to Cart
-// Function to handle Add to Cart
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function() {
-        // Get current user
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        const user = users.find(u => u.username === currentUser);
-
-        if (!user) {
-            alert('Please log in to add items to your cart.');
-            return;
-        }
-
-        // Get product details from data attributes
-        const product = {
-            id: this.getAttribute('data-id'),
-            name: this.getAttribute('data-name'),
-            price: this.getAttribute('data-price'),
-            imgSrc: this.getAttribute('data-image')
-        };
-
-        // Check if item is already in the cart
-        const itemExists = user.cart.some(item => item.id === product.id);
-
-        if (itemExists) {
-            alert('This item is already in your cart.');
-        } else {
-            // Add item to user's cart
-            user.cart.push(product);
-            // Update users in localStorage
-            localStorage.setItem('users', JSON.stringify(users));
-            alert(`${product.name} has been added to your cart.`);
-        }
+// Function 4: Add to Cart
+document.querySelectorAll('.add-to-cart').forEach((button) => {
+    button.addEventListener('click', function () {
+      // Get current user
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  
+      if (!loggedInUser) {
+        alert('Please log in to add items to your cart.');
+        return;
+      }
+  
+      const user = users.find((u) => u.username === loggedInUser.username);
+  
+      if (!user) {
+        alert('User not found.');
+        return;
+      }
+  
+      // Get product details from data attributes
+      const product = {
+        id: this.getAttribute('data-id'),
+        name: this.getAttribute('data-name'),
+        price: this.getAttribute('data-price'),
+        imgSrc: this.getAttribute('data-image'),
+      };
+  
+      // Check if item is already in the cart
+      const itemExists = user.cart.some((item) => item.id === product.id);
+  
+      if (itemExists) {
+        alert('This item is already in your cart.');
+      } else {
+        // Add item to user's cart
+        user.cart.push(product);
+        // Update users in localStorage
+        localStorage.setItem('users', JSON.stringify(users));
+        alert(`${product.name} has been added to your cart.`);
+      }
     });
-});
-
-// Function to handle Add to Cart
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function() {
-        // Get current user
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        const user = users.find(u => u.username === currentUser);
-
-        if (!user) {
-            alert('Please log in to add items to your cart.');
-            return;
-        }
-
-        // Get product details from data attributes
-        const product = {
-            id: this.getAttribute('data-id'),
-            name: this.getAttribute('data-name'),
-            price: this.getAttribute('data-price'),
-            imgSrc: this.getAttribute('data-image')
-        };
-
-        // Check if item is already in the cart
-        const itemExists = user.cart.some(item => item.id === product.id);
-
-        if (itemExists) {
-            
-        } else {
-            // Add item to user's cart
-            user.cart.push(product);
-            // Update users in localStorage
-            localStorage.setItem('users', JSON.stringify(users));
-            alert(`${product.name} has been added to your cart.`);
-        }
-    });
-});
+  });
+  
+  // Function 5: Update Navbar on Page Load
+  document.addEventListener('DOMContentLoaded', () => {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    const authButtons = document.getElementById('auth-buttons');
+  
+    if (loggedInUser) {
+      authButtons.innerHTML = `
+        <span class="welcome-text">Hello, ${loggedInUser.username}</span>
+        <button id="logout" class="button">Log Out</button>
+      `;
+  
+      document.getElementById('logout').addEventListener('click', () => {
+        localStorage.removeItem('loggedInUser');
+        window.location.href = 'index.html'; // Redirect to homepage
+      });
+    }
+  });
