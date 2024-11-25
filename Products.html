@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="Devices.css">
+    
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="Products.css">
     <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="auth.css">
     <title>Products</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,14 +42,62 @@
                     <a href="#services" class="navbar__links" id="services-page">Services</a>
                 </li>
                 <li class="navbar__item">
-                    <a href="#accesories" class="navbar__links" id="accessories-page">Cart</a>
+                    <a href="Cart.html" class="navbar__links" id="accessories-page">Cart</a>
                 </li>
-                <li class="navbar__btn">
-                    <a href="auth.html" class="button" id="signup">Sign Up</a>
+                <li class="navbar__btn" id="auth-buttons">
+                    <button class="button" id="open-auth-modal">Sign Up / Log In</button>
                 </li>
             </ul>
         </div>
      </nav>
+ <!-- Auth Modal -->
+ <div id="auth-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="close-auth-modal">&times;</span>
+        
+        <!-- Logo -->
+        <div class="modal-header">
+            <img src="Logos/PlaystationTrademarkLogo.svg"  alt="Logo" class="modal-logo">
+        </div>
+        
+        <!-- Banner Message -->
+        <div class="modal-banner">
+            <h2>Welcome Back!</h2>
+            <p>Please sign in or create an account to continue.</p>
+        </div>
+        
+        <!-- Sign Up Form -->
+        <div class="form-container" id="signup-form">
+            <h2>Sign Up</h2>
+            <form id="signup">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Log In Form -->
+        <div class="form-container" id="login-form">
+            <h2>Log In</h2>
+            <form id="login">
+                <label for="username">Username:</label>
+                <input type="text" id="login-username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
     <!-- Products Hero Section -->
     <section class="hero">
         <h1>Our Latest Consoles And Accesories</h1>
@@ -94,44 +143,87 @@
         </div>
         <div class="products__container">
             <div class="product__item" data-type="console">
-                <img src="Devices Images\PlayStation_5ProConsole_1200x.avif" alt="Product 1">
+                <img src="Devices Images/PlayStation_5ProConsole_1200x.avif" alt="PlayStation 5 Pro">
                 <h2>PlayStation 5 Pro</h2>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart"
+                    data-id="ps5pro"
+                    data-name="PlayStation 5 Pro"
+                    data-price="499.99"
+                    data-image="Devices Images/PlayStation_5ProConsole_1200x.avif">
+                    Add to Cart
+                </button>
             </div>
             <div class="product__item" data-type="console">
                 <img src="Devices Images\PS5 SLIM.avif" alt="Product 1">
                 <h2>PlayStation 5 Slim</h2>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart"
+                    data-id="ps5slim"
+                    data-name="PlayStation 5 Slim"
+                    data-price="699.99"
+                    data-image="Devices Images\PS5 SLIM.avif">
+                    Add to Cart
+                </button>
             </div>
             <div class="product__item" data-type="console">
                 <img src="Devices Images\Playstation 5 Base Add to Cart.avif" alt="Product 4">
                 <h2>PlayStation 5</h2>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart"
+                    data-id="ps5"
+                    data-name="PlayStation 5"
+                    data-price="399.99"
+                    data-image="Devices Images\Playstation 5 Base Add to Cart.avif">
+                    Add to Cart
             </div>
             <div class="product__item" data-type="accessory">
                 <img src="Devices Images\DualSense-Wireless-Controller_03.avif" alt="Product 2">
                 <h2>DualSense Wireless Controller</h2>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart"
+                    data-id="dswcontrol"
+                    data-name="DualSense Wireless Controller"
+                    data-price="59.99"
+                    data-image="Devices Images\DualSense-Wireless-Controller_03.avif">
+                    Add to Cart
+                </button>
             </div>
             <div class="product__item" data-type="accessory">
                 <img src="Devices Images\DualSense Edge.avif" alt="Product 2">
                 <h2>DualSense Edge Wireless Controller</h2>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart"
+                    data-id="dsecontrol"
+                    data-name="DualSense Edge Wireless Controller"
+                    data-price="69.99"
+                    data-image="Devices Images\DualSense Edge.avif">
+                    Add to Cart
             </div>
             <div class="product__item" data-type="accessory">
                 <img src="Devices Images\SonyPlayStationPulseExploreWirelessEarbuds_3.avif" alt="Product 3">
                 <h2>Pulse Wireless Earbuds</h2>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart"
+                    data-id="pulseearbuds"
+                    data-name="Pulse Wireless Earbuds"
+                    data-price="99.99"
+                    data-image="Devices Images\SonyPlayStationPulseExploreWirelessEarbuds_3.avif">
+                    Add to Cart
             </div>
             <div class="product__item" data-type="accessory">
                 <img src="Devices Images\Pulse Wireless Headset.avif" alt="Product 5">
                 <h2>Pulse Wireless Headset</h2>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart"
+                    data-id="pulseheadset"
+                    data-name="Pulse Wireless Headset"
+                    data-price="129.99"
+                    data-image="Devices Images\Pulse Wireless Headset.avif">
+                    Add to Cart
             </div>
             <div class="product__item" data-type="accessory">
                 <img src="Devices Images\10233476-PS5-Camera_Glacier-White.jpg" alt="Product 6">
                 <h2>PlayStation Camera</h2>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart"
+                    data-id="pscamera"
+                    data-name="PlayStation Camera"
+                    data-price="59.99"
+                    data-image="Devices Images\10233476-PS5-Camera_Glacier-White.jpg">
+                    Add to Cart
             </div>
         </div>
     </section>
@@ -149,20 +241,20 @@
         <div class="color-shells__grid">
             <div class="shell-card">
                 <div class="shell-card__image">
-                    <img src="Devices Images/Shell-Cosmic-Red.avif" alt="Cosmic Red Shell">
+                    <img src="Devices Images\Techno Blue.avif" alt="Cosmic Red Shell">
                     <div class="shell-card__overlay">
                         <span class="shell-card__price">$54.99</span>
                     </div>
                 </div>
                 <div class="shell-card__content">
-                    <h3>Cosmic Red</h3>
+                    <h3>Techno Blue</h3>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             
             <div class="shell-card">
                 <div class="shell-card__image">
-                    <img src="Devices Images/Shell-Midnight-Black.avif" alt="Midnight Black Shell">
+                    <img src="Devices Images\BlackCoverPlate.avif" alt="Midnight Black Shell">
                     <div class="shell-card__overlay">
                         <span class="shell-card__price">$54.99</span>
                     </div>
@@ -175,7 +267,7 @@
     
             <div class="shell-card">
                 <div class="shell-card__image">
-                    <img src="Devices Images/Shell-Nova-Pink.avif" alt="Nova Pink Shell">
+                    <img src="Devices Images\NovaPinkCoverPlate.avif" alt="Nova Pink Shell">
                     <div class="shell-card__overlay">
                         <span class="shell-card__price">$54.99</span>
                     </div>
@@ -188,7 +280,7 @@
     
             <div class="shell-card">
                 <div class="shell-card__image">
-                    <img src="Devices Images/Shell-Starlight-Blue.avif" alt="Starlight Blue Shell">
+                    <img src="Devices Images\BlueCoverPlate.avif" alt="Starlight Blue Shell">
                     <div class="shell-card__overlay">
                         <span class="shell-card__price">$54.99</span>
                     </div>
@@ -200,13 +292,13 @@
             </div>
             <div class="shell-card">
                 <div class="shell-card__image">
-                    <img src="Devices Images/Shell-Purple.avif" alt="Purple Shell">
+                    <img src="Devices Images\GoldCoverplate.avif" alt="Purple Shell">
                     <div class="shell-card__overlay">
-                        <span class="shell-card__price">$54.99</span>
+                        <span class="shell-card__price">$129.99</span>
                     </div>
                 </div>
                 <div class="shell-card__content">
-                    <h3>Galactic Purple</h3>
+                    <h3>Golden Rule</h3>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
@@ -218,7 +310,7 @@
                     </div>
                 </div>
                 <div class="shell-card__content">
-                    <h3>Galactic Purple</h3>
+                    <h3>Derpy Purple</h3>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
@@ -268,5 +360,6 @@
 
 
      <script src="app.js"></script>
+     <script src="modal.js"></script>
 </body>
 </html>

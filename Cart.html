@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="Cart.css">
+    <link rel="stylesheet" href="Navbar.css">
+    <link rel="stylesheet" href="auth.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="#home" id="navbar__logo"> <img src="Logos\PlaystationTrademarkLogo.svg" class = "filter-white" alt="Logo" width="400" height="100"></a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#games" class="navbar__links" id="games-page">Games</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Products.html" class="navbar__links" id="console-page">Products</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#services" class="navbar__links" id="services-page">Services</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#accesories" class="navbar__links" id="accessories-page">Cart</a>
+                </li>
+                <li class="navbar__btn" id="auth-buttons">
+                    <button class="button" id="open-auth-modal">Sign Up / Log In</button>
+                </li>
+            </ul>
+        </div>
+     </nav>
+ <!-- Auth Modal -->
+ <div id="auth-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="close-auth-modal">&times;</span>
+        
+        <!-- Logo -->
+        <div class="modal-header">
+            <img src="Logos/PlaystationTrademarkLogo.svg"  alt="Logo" class="modal-logo">
+        </div>
+        
+        <!-- Banner Message -->
+        <div class="modal-banner">
+            <h2>Welcome Back!</h2>
+            <p>Please sign in or create an account to continue.</p>
+        </div>
+        
+        <!-- Sign Up Form -->
+        <div class="form-container" id="signup-form">
+            <h2>Sign Up</h2>
+            <form id="signup">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Log In Form -->
+        <div class="form-container" id="login-form">
+            <h2>Log In</h2>
+            <form id="login">
+                <label for="username">Username:</label>
+                <input type="text" id="login-username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <!-- Cart Section -->
+<section class="cart">
+    <h1>Your Cart</h1>
+    <div class="cart__container" id="cart-container">
+        <!-- Cart items will be displayed here -->
+    </div>
+    <div class="cart__summary">
+        <h2>Total: $<span id="total-price">0.00</span></h2>
+        <button id="checkout-button">Checkout</button>
+    </div>
+</section>
+<script src="app.js"></script>
+<script src="modal.js"></script>
+<script>
+    // Retrieve current user
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const user = users.find(u => u.username === currentUser);
+
+    if (!user) {
+        alert('No user logged in.');
+        window.location.href = 'index.html';
+    }
+
+    const cartContainer = document.getElementById('cart-container');
+    const totalPriceEl = document.getElementById('total-price');
+
+    let total = 0;
+
+    user.cart.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart__item');
+
+        itemDiv.innerHTML = `
+            <img src="${item.imgSrc}" alt="${item.name}" class="cart__item-image">
+            <div class="cart__item-details">
+                <h3>${item.name}</h3>
+                <p>Price: $${item.price}</p>
+                <button class="remove-item" data-id="${item.id}">Remove</button>
+            </div>
+        `;
+        cartContainer.appendChild(itemDiv);
+        total += parseFloat(item.price);
+    });
+
+    totalPriceEl.textContent = total.toFixed(2);
+
+    // Remove item from cart
+    cartContainer.addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove-item')) {
+            const id = e.target.getAttribute('data-id');
+            user.cart = user.cart.filter(item => item.id !== id);
+            localStorage.setItem('users', JSON.stringify(users));
+            location.reload();
+        }
+    });
+
+    // Checkout button functionality
+    document.getElementById('checkout-button').addEventListener('click', () => {
+        alert('Checkout functionality not implemented.');
+    });
+</script>
+</body>
+</html>

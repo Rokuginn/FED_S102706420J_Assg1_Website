@@ -120,3 +120,75 @@ document.querySelector('.scroll-right').addEventListener('click', () => {
     }
 });
 
+//Function 4: Add to Cart
+// Function to handle Add to Cart
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+        // Get current user
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const user = users.find(u => u.username === currentUser);
+
+        if (!user) {
+            alert('Please log in to add items to your cart.');
+            return;
+        }
+
+        // Get product details from data attributes
+        const product = {
+            id: this.getAttribute('data-id'),
+            name: this.getAttribute('data-name'),
+            price: this.getAttribute('data-price'),
+            imgSrc: this.getAttribute('data-image')
+        };
+
+        // Check if item is already in the cart
+        const itemExists = user.cart.some(item => item.id === product.id);
+
+        if (itemExists) {
+            alert('This item is already in your cart.');
+        } else {
+            // Add item to user's cart
+            user.cart.push(product);
+            // Update users in localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+            alert(`${product.name} has been added to your cart.`);
+        }
+    });
+});
+
+// Function to handle Add to Cart
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+        // Get current user
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const user = users.find(u => u.username === currentUser);
+
+        if (!user) {
+            alert('Please log in to add items to your cart.');
+            return;
+        }
+
+        // Get product details from data attributes
+        const product = {
+            id: this.getAttribute('data-id'),
+            name: this.getAttribute('data-name'),
+            price: this.getAttribute('data-price'),
+            imgSrc: this.getAttribute('data-image')
+        };
+
+        // Check if item is already in the cart
+        const itemExists = user.cart.some(item => item.id === product.id);
+
+        if (itemExists) {
+            
+        } else {
+            // Add item to user's cart
+            user.cart.push(product);
+            // Update users in localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+            alert(`${product.name} has been added to your cart.`);
+        }
+    });
+});

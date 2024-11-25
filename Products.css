@@ -381,44 +381,45 @@
   background: rgba(255, 255, 255, 1);
 }
 
-.shell-card {
-  flex: 0 0 300px; /* Don't shrink, don't grow, fixed width */
-  scroll-snap-align: start; /* Optional: for better scroll stopping points */
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-/* Add subtle indication of more content */
-.color-shells::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 50px;
-  background: linear-gradient(to right, transparent, rgba(0,0,0,0.2));
-  pointer-events: none;
-}
-
-.shell-card:hover {
-  transform: translateY(-5px);
-}
-
+/* Shell Card Image Container */
 .shell-card__image {
   position: relative;
-  padding-top: 75%;
+  padding-top: 110%; /* Maintain 1:1 Aspect Ratio */
+  width: 100%;
+  overflow: hidden;
 }
 
+/* Shell Card Image */
 .shell-card__image img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensures the image covers the container */
+  display: block;
+}
+
+/* Shell Card Styling */
+.shell-card {
+  flex: 0 0 300px; /* Fixed width */
+  scroll-snap-align: start;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0; /* Remove padding to maintain image aspect ratio */
+  background-color: #ffffff;
+  height: auto; /* Let content dictate height */
+}
+
+.shell-card:hover {
+  transform: translateY(-5px);
 }
 
 .shell-card__overlay {
@@ -500,6 +501,10 @@
 
   .shell-card {
     flex: 0 0 280px;
+  }
+
+  .shell-card__image {
+    padding-top: 56.25%; /* Maintain 16:9 Aspect Ratio */
   }
 
   /* Button adjustments */
