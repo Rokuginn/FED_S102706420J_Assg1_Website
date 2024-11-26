@@ -1,4 +1,6 @@
 /* Cart Section */
+
+
 .cart {
     padding: 50px;
     max-width: 1200px;
@@ -46,6 +48,7 @@
     padding: 10px;
     cursor: pointer;
     margin-top: 10px;
+    border-radius: 4px;
 }
 
 .cart__summary {

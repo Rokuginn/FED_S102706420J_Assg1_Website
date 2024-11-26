@@ -18,6 +18,7 @@
     position: sticky;
     top: 0;
     z-index: 999;
+    overflow: hidden;
 }
 
 
@@ -120,6 +121,12 @@
 
 
 @media screen and (max-width: 1024px) {
+    
+    .navbar{
+        overflow: visible;
+    }
+
+
     .navbar__container {
         display: flex;
         justify-content: space-between;
@@ -222,49 +229,65 @@
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    #logout{
+        position: relative;
+        left: 40px;
+    }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
-    .navbar__item {
-        height: 100px;
-    }
-
-    .navbar__links {
-        padding: 1rem 1rem;
-        width: 50%;
-        height: 100%;
-        justify-content: space-evenly;
-    }
-
-    .navbar__btn {
-        padding: 0rem 1rem;
-        width: 400px;
-    }
-
-    .button {
-        padding: 10px 30px;
-        margin-right: 200px;
-        height: 50px;
-        width: 500px;
-    }
-
-    .navbar__menu {
-        width: 50%;
+    .navbar {
+        height: 80px; /* Adjust the height for laptop screens */
     }
 
     .navbar__container {
-        max-width: 900px;
-    }
-
-    .button {
-        left: -30px;
+        max-width: 1300px; /* Adjust the max-width for laptop screens */
+        padding: 0 30px; /* Adjust the padding for laptop screens */
     }
 
     #navbar__logo {
-        width: 150px;
+        width: 120px; /* Adjust the logo width for laptop screens */
+        margin-left: 0; /* Adjust the margin for laptop screens */
     }
 
     .navbar__menu {
-        width: 50%;
+        width: auto; /* Adjust the width for laptop screens */
+    }
+
+    .navbar__item {
+        height: 70px; /* Adjust the item height for laptop screens */
+    }
+
+    .navbar__links {
+        padding: 0 1rem; /* Adjust the padding for laptop screens */
+        width: auto; /* Adjust the width for laptop screens */
+        height: 100%; /* Ensure full height for laptop screens */
+        justify-content: center; /* Center the links for laptop screens */
+    }
+
+    .navbar__btn {
+        padding: 0 1rem; /* Adjust the padding for laptop screens */
+        width: auto; /* Adjust the width for laptop screens */
+    }
+
+    .button {
+        padding: 10px 20px; /* Adjust the padding for laptop screens */
+        height: 40px; /* Adjust the height for laptop screens */
+        width: auto; /* Adjust the width for laptop screens */
+        margin-right: 0; /* Adjust the margin for laptop screens */
+        left: 0; /* Adjust the position for laptop screens */
+    }
+
+    .welcome-text {
+        font-size: 1rem; /* Adjust the font size for laptop screens */
+        margin-right: 0; /* Adjust the margin for laptop screens */
+        font-family: Open sans;
+        font-weight: 600;
+    }
+    #logout{
+        position: relative;
+        left: 50px;
     }
 }
+
