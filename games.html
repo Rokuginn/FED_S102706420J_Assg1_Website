@@ -96,95 +96,261 @@
 <!-- Games Section -->
 <section class="games">
     <div class="games__wrapper">  
-        <h1>Latest Games Releases</h1>
+        <div class="games__header">
+            <h1>Latest Games Releases</h1>
+            <div class="search-filter">
+                <input 
+                    type="text" 
+                    id="game-search" 
+                    placeholder="Search games..."
+                    class="search-input"
+                >
+            </div>
+        </div>
+        <div class="genre-cards">
+            
+            <div class="genre-card" data-genre="action">
+                <img src="Game Images\action-game-genre.avif" alt="Action">
+                <div class="genre-info">
+                    <h3>Action</h3>
+                    <span class="genre-count">3</span>
+                </div>
+            </div>
+            <div class="genre-card" data-genre="rpg">
+                <img src="Game Images\RPG GENRE.jpg" alt="RPG">
+                <div class="genre-info">
+                    <h3>RPG</h3>
+                    <span class="genre-count">1</span>
+                </div>
+            </div>
+            <div class="genre-card" data-genre="all">
+                <img src="Game Images\playstation-collage.avif" alt="All Games">
+                <div class="genre-info">
+                    <h3>All Games</h3>
+                    <span class="genre-count">12</span>
+                </div>
+            </div>
+            <div class="genre-card" data-genre="fps">
+                <img src="Game Images\FPS Image.jpg" alt="RPG">
+                <div class="genre-info">
+                    <h3>FPS</h3>
+                    <span class="genre-count">1</span>
+                </div>
+            </div>
+            <div class="genre-card" data-genre="fighting">
+                <img src="Game Images\Fighting-game-image-genre.jpg" alt="RPG">
+                <div class="genre-info">
+                    <h3>Fighting</h3>
+                    <span class="genre-count">1</span>
+                </div>
+            </div>
+        </div>
         <div class="games__container">
-            <div class="game__card">
-                <img src="Game Icons\GOW-ICON.jpg" alt="Game 1">
+            <div class="game__card" data-genre="action">
+                <img src="Game Icons\GOW-ICON.jpg" alt="God of War">
                 <div class="game__info">
                     <h3>God Of War</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$59.99</span>
+                    <button class="add-to-cart"
+                        data-id="gow"
+                        data-name="God Of War"
+                        data-price="59.99"
+                        data-image="Game Icons\GOW-ICON.jpg">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\VeilGuardIcon.jpg" alt="Game 1">
+            
+            <div class="game__card" data-genre="rpg">
+                <img src="Game Icons\VeilGuardIcon.jpg" alt="Dragon Age">
                 <div class="game__info">
                     <h3>Dragon Age: The VeilGuard</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$69.99</span>
+                    <button class="add-to-cart"
+                        data-id="veilguard"
+                        data-name="Dragon Age: The VeilGuard"
+                        data-price="69.99"
+                        data-image="Game Icons\VeilGuardIcon.jpg">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\SWOICON.avif" alt="Game 1">
+            
+            <div class="game__card" data-genre="action-adventure">
+                <img src="Game Icons\SWOICON.avif" alt="Star Wars Outlaws">
                 <div class="game__info">
                     <h3>Star Wars Outlaws</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$69.99</span>
+                    <button class="add-to-cart"
+                        data-id="starwarsoutlaws"
+                        data-name="Star Wars Outlaws"
+                        data-price="69.99"
+                        data-image="Game Icons\SWOICON.avif">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\SPM2ICON.avif" alt="Game 1">
+            
+            <div class="game__card" data-genre="action">
+                <img src="Game Icons\SPM2ICON.avif" alt="Space Marine 2">
                 <div class="game__info">
                     <h3>Space Marine 2</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$59.99</span>
+                    <button class="add-to-cart"
+                        data-id="spacemarine2"
+                        data-name="Space Marine 2"
+                        data-price="59.99"
+                        data-image="Game Icons\SPM2ICON.avif">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\HD2ICON.avif" alt="Game 1">
+            
+            <div class="game__card" data-genre="fps">
+                <img src="Game Icons\HD2ICON.avif" alt="HellDivers 2">
                 <div class="game__info">
                     <h3>HellDivers 2</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$49.99</span>
+                    <button class="add-to-cart"
+                        data-id="helldivers2"
+                        data-name="HellDivers 2"
+                        data-price="49.99"
+                        data-image="Game Icons\HD2ICON.avif">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\BO6ICON.jpg" alt="Game 1">
+            
+            <div class="game__card" data-genre="fps">
+                <img src="Game Icons\BO6ICON.jpg" alt="Black Ops 6">
                 <div class="game__info">
                     <h3>Black Ops 6</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$69.99</span>
+                    <button class="add-to-cart"
+                        data-id="blackops6"
+                        data-name="Black Ops 6"
+                        data-price="69.99"
+                        data-image="Game Icons\BO6ICON.jpg">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\DBSZICON.avif" alt="Game 1">
+            
+            <div class="game__card" data-genre="fighting">
+                <img src="Game Icons\DBSZICON.avif" alt="Dragon Ball Sparking Zero">
                 <div class="game__info">
                     <h3>Dragon Ball Sparking Zero</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$59.99</span>
+                    <button class="add-to-cart"
+                        data-id="dbsparkingzero"
+                        data-name="Dragon Ball Sparking Zero"
+                        data-price="59.99"
+                        data-image="Game Icons\DBSZICON.avif">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\BMWICON.jpg" alt="Game 1">
+            
+            <div class="game__card" data-genre="action">
+                <img src="Game Icons\BMWICON.jpg" alt="Black Myth Wukong">
                 <div class="game__info">
                     <h3>Black Myth Wukong</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$69.99</span>
+                    <button class="add-to-cart"
+                        data-id="blackmythwukong"
+                        data-name="Black Myth Wukong"
+                        data-price="69.99"
+                        data-image="Game Icons\BMWICON.jpg">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\ABICON.avif" alt="Game 1">
+            
+            <div class="game__card" data-genre="platformer">
+                <img src="Game Icons\ABICON.avif" alt="Astro Bot">
                 <div class="game__info">
                     <h3>Astro Bot</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$39.99</span>
+                    <button class="add-to-cart"
+                        data-id="astrobot"
+                        data-name="Astro Bot"
+                        data-price="39.99"
+                        data-image="Game Icons\ABICON.avif">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\BW2042.avif" alt="Game 1">
+            
+            <div class="game__card" data-genre="fps">
+                <img src="Game Icons\BW2042.avif" alt="Battlefield 2042">
                 <div class="game__info">
                     <h3>BattleField 2042</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$59.99</span>
+                    <button class="add-to-cart"
+                        data-id="battlefield2042"
+                        data-name="BattleField 2042"
+                        data-price="59.99"
+                        data-image="Game Icons\BW2042.avif">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\UDAICON.jpg" alt="Game 1">
+            
+            <div class="game__card" data-genre="horror">
+                <img src="Game Icons\UDAICON.jpg" alt="Until Dawn">
                 <div class="game__info">
                     <h3>Until Dawn</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$49.99</span>
+                    <button class="add-to-cart"
+                        data-id="untildawn"
+                        data-name="Until Dawn"
+                        data-price="49.99"
+                        data-image="Game Icons\UDAICON.jpg">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
-            <div class="game__card">
-                <img src="Game Icons\PWOICON.avif" alt="Game 1">
+            
+            <div class="game__card" data-genre="adventure">
+                <img src="Game Icons\PWOICON.avif" alt="PalWorld">
                 <div class="game__info">
                     <h3>PalWorld</h3>
-                    <button>Buy Now</button>
+                    <span class="game__price">$29.99</span>
+                    <button class="add-to-cart"
+                        data-id="palworld"
+                        data-name="PalWorld"
+                        data-price="29.99"
+                        data-image="Game Icons\PWOICON.avif">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- Game Details -->
+<div id="game-details-modal" class="modal">
+    <div class="modal-content game-details">
+        <span class="close-button" id="close-game-modal">&times;</span>
+        <div class="game-details__content">
+            <div class="game-details__header">
+                <img src="" alt="" class="game-details__image">
+                <div class="game-details__info">
+                    <h2 class="game-details__title"></h2>
+                    <p class="game-details__price"></p>
+                    <button class="add-to-cart"></button>
+                </div>
+            </div>
+            <div class="game-details__body">
+                <div class="game-details__metadata">
+                    <p class="game-details__publisher"></p>
+                    <p class="game-details__release-date"></p>
+                </div>
+                <p class="game-details__description"></p>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Footer Section -->
 <footer class="footer">
     <div class="footer__container">
@@ -224,5 +390,6 @@
 </footer>
 <script src="app.js"></script>
 <script src="modal.js"></script>
+<script src="games.js"></script>
 </body>
 </html>
