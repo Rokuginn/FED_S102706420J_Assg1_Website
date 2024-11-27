@@ -10,48 +10,46 @@ const mobileMenu = () => {
 };
 
 menu.addEventListener('click', mobileMenu);
-// Function 1: To adjust the hero section horizontal scrolling
-let currentSlide = 0;
-
-function showSlide(index) {
-    const slides = document.querySelectorAll('.slide');
-    const slideContents = document.querySelectorAll('.slide-content');
-    
-    if (index >= slides.length) {
-        currentSlide = 0;
-    } else if (index < 0) {
-        currentSlide = slides.length - 1;
-    } else {
-        currentSlide = index;
-    }
-    
-    const offset = currentSlide * slides[0].clientWidth;
-    document.querySelector('.slider').scrollTo({
-        left: offset,
-        behavior: 'smooth'
-    });
-
-    // Remove fade-in class from all slide contents
-    slideContents.forEach(content => content.classList.remove('fade-in'));
-
-    // Add fade-in class to the current slide content
-    slideContents[currentSlide].classList.add('fade-in');
-}
-
-function nextSlide() {
-    showSlide(currentSlide + 1);
-}
-
-function prevSlide() {
-    showSlide(currentSlide - 1);
-}
-
-// Initial fade-in for the first slide
+// Function 6: Hero Slider
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.slide-content')[0].classList.add('fade-in');
+  // Hero Slider functionality
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelector('.slide-dots');
+  const prevBtn = document.querySelector('.prev-slide');
+  const nextBtn = document.querySelector('.next-slide');
+  let currentSlide = 0;
+
+  // Create dots
+  slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dots.appendChild(dot);
+  });
+
+  // Show first slide
+  slides[0].classList.add('active');
+
+  function goToSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      document.querySelectorAll('.dot')[currentSlide].classList.remove('active');
+      
+      currentSlide = index;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+      
+      slides[currentSlide].classList.add('active');
+      document.querySelectorAll('.dot')[currentSlide].classList.add('active');
+  }
+
+  // Navigation
+  prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+  nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+  // Auto advance
+  setInterval(() => goToSlide(currentSlide + 1), 5000);
 });
-
-
 // Function 2: Filter Value
 document.getElementById('product-filter').addEventListener('change', function() {
     const filterValue = this.value;
@@ -179,3 +177,4 @@ document.querySelectorAll('.add-to-cart').forEach((button) => {
       });
     }
   });
+

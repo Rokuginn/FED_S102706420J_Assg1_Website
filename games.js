@@ -138,7 +138,38 @@ const gameDetails = {
         description: 'Explore a vast open world filled with mysterious creatures. Capture, train, and battle with your pals in this unique adventure game.',
         publisher: 'Pocketpair',
         releaseDate: 'Coming 2024'
+    },
+    'eldenring': {
+        description: 'Journey through the Lands Between in this epic fantasy action RPG. Uncover the mysteries of the Elden Ring and become the Elden Lord.',
+        publisher: 'Bandai Namco Entertainment',
+        releaseDate: 'February 25, 2022'
+    },
+    'tekken8': {
+        description: 'Enter the King of Iron Fist Tournament and fight your way to the top in this latest installment of the Tekken series.',
+        publisher: 'Bandai Namco Entertainment',
+        releaseDate: 'Coming 2024'
+    },
+    'spidermanmilesmorales': {
+        description: 'Swing into action as Miles Morales in this thrilling adventure. Master new powers and save New York City from a new threat.',
+        publisher: 'Sony Interactive Entertainment',
+        releaseDate: 'November 12, 2020'
+    },
+    'legohorizonadventures': {
+        description: 'Join your favorite LEGO characters on an epic adventure through the Horizon Festival. Build, race, and explore in this fun-filled game.',
+        publisher: 'Warner Bros. Interactive Entertainment',
+        releaseDate: 'Coming 2024'
+    },
+    'spiderman2': {
+        description: 'Experience the next chapter in the Spider-Man saga. Play as both Peter Parker and Miles Morales as they face new challenges and villains.',
+        publisher: 'Sony Interactive Entertainment',
+        releaseDate: 'October 20, 2023'
+    },
+    'sackboy': {
+        description: 'Join Sackboy on a grand adventure in this charming platformer. Overcome obstacles, solve puzzles, and save Craftworld from the evil Vex.',
+        publisher: 'Sony Interactive Entertainment',
+        releaseDate: 'November 12, 2020'
     }
+     
 };
 
     // Game details modal functionality
@@ -201,6 +232,44 @@ const gameDetails = {
             closeGameModal();
         }
     });
+
+    // Hero Slider functionality
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelector('.slide-dots');
+    const prevBtn = document.querySelector('.prev-slide');
+    const nextBtn = document.querySelector('.next-slide');
+    let currentSlide = 0;
+
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dots.appendChild(dot);
+    });
+
+    // Show first slide
+    slides[0].classList.add('active');
+
+    function goToSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        document.querySelectorAll('.dot')[currentSlide].classList.remove('active');
+        
+        currentSlide = index;
+        if (currentSlide >= slides.length) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = slides.length - 1;
+        
+        slides[currentSlide].classList.add('active');
+        document.querySelectorAll('.dot')[currentSlide].classList.add('active');
+    }
+
+    // Navigation
+    prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+    // Auto advance
+    setInterval(() => goToSlide(currentSlide + 1), 5000);
 });
 
 // Add a reusable function for cart functionality
