@@ -143,3 +143,12 @@
 .form-container button:hover {
     background-color: #0056b3;
 }
+
+@media screen and (min-width: 1024px) and (max-width: 1440px){
+    .modal-content {
+        height: 100%;
+    }
+    .modal-banner h2 {
+        font-size: 1.5rem;
+    }   
+}

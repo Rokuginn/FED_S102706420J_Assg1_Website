@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="Footer.css">
-    <link rel="stylesheet" href="Cart.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="auth.css">
     <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="games.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar Section -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar__container">
-            <a href="#home" id="navbar__logo"> <img src="Logos\PlaystationTrademarkLogo.svg" class = "filter-white" alt="Logo" width="400" height="100"></a>
+            <a href="#home" id="navbar__logo"> <img src="Logos/PlaystationTrademarkLogo.svg" class="filter-white" alt="Logo" width="400" height="100"></a>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -34,16 +38,18 @@
                     <a href="#services" class="navbar__links" id="services-page">Services</a>
                 </li>
                 <li class="navbar__item">
-                    <a href="#accesories" class="navbar__links" id="accessories-page">Cart</a>
+                    <a href="Cart.html" class="navbar__links" id="cart-page">Cart</a>
                 </li>
                 <li class="navbar__btn" id="auth-buttons">
                     <button class="button" id="open-auth-modal">Sign Up / Log In</button>
                 </li>
             </ul>
         </div>
-     </nav>
- <!-- Auth Modal -->
- <div id="auth-modal" class="modal">
+    </nav>
+
+    
+    <!-- Auth Modal -->
+<div id="auth-modal" class="modal">
     <div class="modal-content">
         <span class="close-button" id="close-auth-modal">&times;</span>
         
@@ -87,15 +93,96 @@
         </div>
     </div>
 </div>
-    <!-- Cart Section -->
-<section class="cart">
-    <h1>Your Cart</h1>
-    <div class="cart__container" id="cart-container">
-        <!-- Cart items will be displayed here -->
-    </div>
-    <div class="cart__summary">
-        <h2>Total: $<span id="total-price">0.00</span></h2>
-        <button id="checkout-button">Checkout</button>
+<!-- Games Section -->
+<section class="games">
+    <div class="games__wrapper">  
+        <h1>Latest Games Releases</h1>
+        <div class="games__container">
+            <div class="game__card">
+                <img src="Game Icons\GOW-ICON.jpg" alt="Game 1">
+                <div class="game__info">
+                    <h3>God Of War</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\VeilGuardIcon.jpg" alt="Game 1">
+                <div class="game__info">
+                    <h3>Dragon Age: The VeilGuard</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\SWOICON.avif" alt="Game 1">
+                <div class="game__info">
+                    <h3>Star Wars Outlaws</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\SPM2ICON.avif" alt="Game 1">
+                <div class="game__info">
+                    <h3>Space Marine 2</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\HD2ICON.avif" alt="Game 1">
+                <div class="game__info">
+                    <h3>HellDivers 2</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\BO6ICON.jpg" alt="Game 1">
+                <div class="game__info">
+                    <h3>Black Ops 6</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\DBSZICON.avif" alt="Game 1">
+                <div class="game__info">
+                    <h3>Dragon Ball Sparking Zero</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\BMWICON.jpg" alt="Game 1">
+                <div class="game__info">
+                    <h3>Black Myth Wukong</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\ABICON.avif" alt="Game 1">
+                <div class="game__info">
+                    <h3>Astro Bot</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\BW2042.avif" alt="Game 1">
+                <div class="game__info">
+                    <h3>BattleField 2042</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\UDAICON.jpg" alt="Game 1">
+                <div class="game__info">
+                    <h3>Until Dawn</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="game__card">
+                <img src="Game Icons\PWOICON.avif" alt="Game 1">
+                <div class="game__info">
+                    <h3>PalWorld</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!-- Footer Section -->
@@ -137,60 +224,5 @@
 </footer>
 <script src="app.js"></script>
 <script src="modal.js"></script>
-<script>
-    // Retrieve current user
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-
-    if (!loggedInUser) {
-        alert('No user logged in.');
-        window.location.href = 'index.html';
-    }
-
-    const user = users.find(u => u.username === loggedInUser.username);
-
-    if (!user) {
-        alert('User not found.');
-        window.location.href = 'index.html';
-    }
-
-    const cartContainer = document.getElementById('cart-container');
-    const totalPriceEl = document.getElementById('total-price');
-
-    let total = 0;
-
-    user.cart.forEach(item => {
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('cart__item');
-
-        itemDiv.innerHTML = `
-            <img src="${item.imgSrc}" alt="${item.name}" class="cart__item-image">
-            <div class="cart__item-details">
-                <h3>${item.name}</h3>
-                <p>Price: $${item.price}</p>
-                <button class="remove-item" data-id="${item.id}">Remove</button>
-            </div>
-        `;
-        cartContainer.appendChild(itemDiv);
-        total += parseFloat(item.price);
-    });
-
-    totalPriceEl.textContent = total.toFixed(2);
-
-    // Remove item from cart
-    cartContainer.addEventListener('click', function(e) {
-        if (e.target.classList.contains('remove-item')) {
-            const id = e.target.getAttribute('data-id');
-            user.cart = user.cart.filter(item => item.id !== id);
-            localStorage.setItem('users', JSON.stringify(users));
-            location.reload();
-        }
-    });
-
-    // Checkout button functionality
-    document.getElementById('checkout-button').addEventListener('click', () => {
-        alert('Checkout functionality not implemented.');
-    });
-</script>
 </body>
 </html>
