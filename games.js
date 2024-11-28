@@ -294,5 +294,3 @@ function setupAddToCartButton(button) {
     });
 }
 
-// Initialize add-to-cart buttons for game cards
-document.querySelectorAll('.game__card .add-to-cart').forEach(setupAddToCartButton);
