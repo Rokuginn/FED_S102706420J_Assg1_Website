@@ -270,6 +270,60 @@ const gameDetails = {
 
     // Auto advance
     setInterval(() => goToSlide(currentSlide + 1), 5000);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const gameId = urlParams.get('game');
+    
+    if (gameId) {
+        const gameCard = document.querySelector(`.game__card .add-to-cart[data-id="${gameId}"]`);
+        if (gameCard) {
+            const card = gameCard.closest('.game__card');
+            openGameDetails(card);
+        }
+    }
+});
+
+function openGameDetails(card) {
+    const addToCartBtn = card.querySelector('.add-to-cart');
+    const gameId = addToCartBtn.dataset.id;
+    const gameName = addToCartBtn.dataset.name;
+    const gamePrice = addToCartBtn.dataset.price;
+    const gameImage = addToCartBtn.dataset.image;
+    const details = gameDetails[gameId];
+
+    if (details) {
+        // Update modal content
+        document.querySelector('.game-details__image').src = gameImage;
+        document.querySelector('.game-details__title').textContent = gameName;
+        document.querySelector('.game-details__price').textContent = `$${gamePrice}`;
+        document.querySelector('.game-details__publisher').textContent = `Publisher: ${details.publisher}`;
+        document.querySelector('.game-details__release-date').textContent = `Release Date: ${details.releaseDate}`;
+        document.querySelector('.game-details__description').textContent = details.description;
+
+        // Clone and set up add-to-cart button
+        const modalAddToCartBtn = addToCartBtn.cloneNode(true);
+        document.querySelector('.game-details__info .add-to-cart').replaceWith(modalAddToCartBtn);
+        setupAddToCartButton(modalAddToCartBtn);
+
+        openGameModal();
+    }
+}
+
+function openGameModal() {
+    const gameModal = document.getElementById('game-details-modal');
+    gameModal.style.display = 'block';
+}
+
+function closeGameModal() {
+    const gameModal = document.getElementById('game-details-modal');
+    gameModal.style.display = 'none';
+}
+
+document.getElementById('close-game-modal').addEventListener('click', closeGameModal);
+window.addEventListener('click', (e) => {
+    if (e.target === document.getElementById('game-details-modal')) {
+        closeGameModal();
+    }
 });
 
 // Add a reusable function for cart functionality
@@ -293,4 +347,3 @@ function setupAddToCartButton(button) {
         alert('Added to cart!');
     });
 }
-

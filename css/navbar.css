@@ -29,6 +29,7 @@
 
 
 .navbar__container {
+    position: relative; /* Ensure the parent container is positioned */
     display: flex;
     justify-content: space-between;
     height: 80px;
@@ -112,11 +113,14 @@
 }
 
 .welcome-text {
-    color: #fcfcfc; /* Change this to your desired color */
-    font-size: 1.2rem; /* Adjust the font size as needed */
-    margin-right: -210px; /* Adjust the spacing as needed */
-    display: inline-block;
-    vertical-align: middle;
+    position: absolute; /* Position the welcome text absolutely */
+    right: 50px; /* Adjust the position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fcfcfc;
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 
 
@@ -231,8 +235,11 @@
     }
 
     #logout{
-        position: relative;
+        position: static;
         left: 40px;
+    }
+    .welcome-text{
+        display: none;
     }
 }
 
@@ -290,4 +297,3 @@
         left: 50px;
     }
 }
-
