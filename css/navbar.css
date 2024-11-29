@@ -251,6 +251,9 @@
     .navbar__container {
         max-width: 1300px; /* Adjust the max-width for laptop screens */
         padding: 0 30px; /* Adjust the padding for laptop screens */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     #navbar__logo {
@@ -260,6 +263,8 @@
 
     .navbar__menu {
         width: auto; /* Adjust the width for laptop screens */
+        display: flex;
+        align-items: center;
     }
 
     .navbar__item {
@@ -274,8 +279,12 @@
     }
 
     .navbar__btn {
-        padding: 0 1rem; /* Adjust the padding for laptop screens */
-        width: auto; /* Adjust the width for laptop screens */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        padding: 0 2rem;
+        white-space: nowrap; /* Prevent text wrapping */
     }
 
     .button {
@@ -287,13 +296,28 @@
     }
 
     .welcome-text {
-        font-size: 1rem; /* Adjust the font size for laptop screens */
-        margin-right: 0; /* Adjust the margin for laptop screens */
-        font-family: Open sans;
-        font-weight: 600;
+        position: static; /* Remove absolute positioning */
+        margin-right: 1rem; /* Add spacing between text and button */
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        white-space: nowrap; /* Prevent text wrapping */
+        margin-top: 18px;
     }
-    #logout{
-        position: relative;
-        left: 50px;
+
+    #logout {
+        position: static; /* Remove relative positioning */
+        padding: 8px 20px;
+        height: 40px;
+        min-width: 100px;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    /* Ensure both elements stay in line */
+    #auth-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
     }
 }
