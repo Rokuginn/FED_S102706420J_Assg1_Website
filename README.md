@@ -1,11 +1,11 @@
 # FED_S102706420J_Assg1_Website
-&lt;FED Assignment Repository>
-# Name:Ahmad Danial Bin Azman
+<FED Assignment Repository>
+# Name: Ahmad Danial Bin Azman
 # PlayStation Website 🌟
 
 A sleek and modern website dedicated to showcasing all things PlayStation. Whether you're a fan of the latest devices, epic games, or just want to stay updated on PlayStation news, this site is your go-to destination.
 
-## 🚀 Features (Work in Progress)
+## 🚀 Features  
 ### 1. **Sliding Hero Section**  
    - Eye-catching hero section with a dynamic sliding banner.  
    - Highlights the latest PlayStation announcements and promotions.  
@@ -18,25 +18,63 @@ A sleek and modern website dedicated to showcasing all things PlayStation. Wheth
    - A curated selection of popular PlayStation games.  
    - Includes visuals and brief descriptions to ignite your gaming excitement.  
 
-### 4. **Footer Section**  
+### 4. **Add to Cart Function**  
+   - Easily add items to your cart for later purchase.  
+   - Supports multiple items with a seamless user experience.  
+
+### 5. **Cart Page**  
+   - View all the items you've added to your cart.  
+   - Includes a summary of the total cost and the ability to modify your selections.  
+
+### 6. **Checkout Page**  
+   - A secure and intuitive checkout process.  
+   - Provides a streamlined way to complete purchases.  
+
+### 7. **Pop-Up Feature**  
+   - Displays detailed information about products or games when clicked.  
+   - Improves user experience by presenting essential details in an engaging way.  
+
+### 8. **Log In and Log Out Feature**  
+   - Allows users to create accounts and log in for a personalized experience.  
+   - Secure authentication ensures user data safety.  
+
+### 9. **Footer Section**  
    - Provides essential links, such as social media and contact information.  
    - Keeps you connected with the PlayStation community.
 
-## 🛠️ Development Status
-This project is currently under development. Upcoming features include:
-- **Interactive navigation menu**
-- **Purchasing System Perhaps who knows**
-- **Latest news and blog articles**
-- **Enhanced animations and responsiveness**
-- **Other Pages Such as Products,Games,Sign Up Page,**
+## 🎯 User Audience and Purpose  
+This website has been designed with a clear audience and purpose in mind:  
 
-## 💻 Technologies Used
+- **User Audience**:  
+   - Gaming enthusiasts who are fans of PlayStation consoles and games.  
+   - Tech-savvy individuals interested in the latest PlayStation hardware and accessories.  
+   - Casual gamers or newcomers looking to explore what PlayStation has to offer.  
+
+- **Intent and Purpose**:  
+   - To create a one-stop platform for users to explore, learn, and shop for PlayStation products.  
+   - To provide valuable information about PlayStation devices and games in a user-friendly manner.  
+   - To enhance the PlayStation shopping and browsing experience through intuitive design and interactive features.  
+
+- **Value to Users**:  
+   - Keeps users informed about the latest games and console technology.  
+   - Offers an easy way to explore and purchase PlayStation products.  
+   - Ensures a seamless experience with features like "Add to Cart," "Checkout," and product pop-ups for detailed information.  
+
+- **What the Website Caters For**:  
+   - Provides detailed information about PlayStation products, including consoles, accessories, and games.  
+   - Caters to users seeking a reliable platform to stay updated on PlayStation-related content.  
+   - Serves as a hub for fans to explore and engage with the PlayStation community.
+
+## 🎨 Design Rationale  
+The design choices for this website were made to closely align with the aesthetic and user interface (UI) experience of PlayStation consoles:
+- **Color Scheme**: The chosen colors are inspired by the PlayStation console UI, maintaining a sleek and professional appearance with a modern gaming vibe.  
+- **Typography**: Fonts used include **Poppins** and **Open Sans Serif** with a font weight of 300. These fonts were selected for their close resemblance to the typefaces used in the actual PlayStation console UI, ensuring a familiar and cohesive experience for users.  
+- **Image Format**: Most of the images are in **AVIF format** as it is highly optimized for web development. AVIF provides excellent compression without compromising quality, resulting in faster page load times and better user experience.
+
+## 💻 Technologies Used  
 - **HTML5**: For the structure and content of the website.  
 - **CSS3**: For styling and layout, including animations.  
 - **JavaScript**: To add interactivity and dynamic features.
-
-## 🎯 Goals
-Our aim is to create an engaging, user-friendly platform for PlayStation enthusiasts compared to current one. As i find it quite ugly and unsatisfying to use
 
 ## 📌 How to Use
 1. Clone the repository:

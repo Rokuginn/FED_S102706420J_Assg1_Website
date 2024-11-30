@@ -312,27 +312,34 @@
 /* Color Shells Section */
 .color-shells {
   position: relative; /* For absolute positioning of scroll buttons */
-  padding: 4rem 2rem;
+  padding: 0 50px; /* Make room for scroll buttons */
   background: linear-gradient(45deg, 
     #ff0000, #ff7f00, #b1b149, #00ff00, #0000ff, #4b0082, #8b00ff
   );
   background-size: 400% 400%;
   animation: gradient 7s ease infinite;
+  margin-top: 50px;
 }
 
 .color-shells__title {
   text-align: center;
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
+  padding: 2rem 0;
+  margin: 2rem auto 3rem;
+  font-size: clamp(2rem, 4vw, 2.5rem); /* Responsive font size */
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
   color: white;
+  position: relative;
+  max-width: 700px;
+  letter-spacing: 0.05em;
 }
+
+
 
 .color-shells__grid {
   display: flex;
   gap: 2rem;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   padding: 1rem 0;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
@@ -350,7 +357,7 @@
 /* Scroll Buttons */
 .scroll-buttons {
   position: absolute;
-  top: 95%;
+  top: 50%;
   width: 100%;
   left: 0;
   transform: translateY(-50%);
@@ -358,6 +365,7 @@
   justify-content: space-between;
   padding: 0 1rem;
   pointer-events: none;
+  z-index: 2;
   
 }
 
@@ -375,11 +383,27 @@
   font-size: 1.5rem;
   pointer-events: auto;
   transition: background-color 0.3s ease;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto; /* Re-enable button clicks */
+  transition: opacity 0.3s;
+}
+
+.scroll-left {
+  left: 10px;
+}
+
+.scroll-right {
+  right: 10px;
 }
 
 .scroll-left:hover,
 .scroll-right:hover {
   background: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 /* Shell Card Image Container */

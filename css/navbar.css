@@ -94,9 +94,7 @@
     border: none;
     outline: none;
     border-radius: 6px;
-    background: #fceabb;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f8b500, #fceabb);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f8b500, #fceabb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #f8b500;  /* fallback for old browsers */
     text-decoration: none;
     color: #ffffff;
     transition: all 0.3s ease;
@@ -105,11 +103,16 @@
     cursor: pointer;
 }
 
+.button:hover{
+    transform: scale(1.1);
+}
+
 .navbar__links:hover {
     color: #fceabb;  /* fallback for old browsers */
     color: -webkit-linear-gradient(to right, #f8b500, #daae41);  /* Chrome 10-25, Safari 5.1-6 */
     color: linear-gradient(to right, #f8b500, #fac339); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     transition: all 0.3s ease;
+    transform: scale(1.1);
 }
 
 .welcome-text {

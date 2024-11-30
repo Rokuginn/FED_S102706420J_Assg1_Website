@@ -10,6 +10,7 @@ const mobileMenu = () => {
 };
 
 menu.addEventListener('click', mobileMenu);
+
 // Function 6: Hero Slider
 document.addEventListener('DOMContentLoaded', () => {
   // Hero Slider functionality
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.querySelector('.next-slide');
   let currentSlide = 0;
 
-  // Create dots
+  // Create dots //Dots have been hidden but ill leave it here for future reference
   slides.forEach((_, index) => {
       const dot = document.createElement('div');
       dot.classList.add('dot');
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Auto advance
   setInterval(() => goToSlide(currentSlide + 1), 5000);
 });
+
 // Function 2: Filter Value
 document.getElementById('product-filter').addEventListener('change', function() {
     const filterValue = this.value;
@@ -120,45 +122,40 @@ document.querySelector('.scroll-right').addEventListener('click', () => {
 
 // Function 4: Add to Cart
 document.querySelectorAll('.add-to-cart').forEach((button) => {
-    button.addEventListener('click', function () {
-      // Get current user
-      const users = JSON.parse(localStorage.getItem('users')) || [];
-      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-  
-      if (!loggedInUser) {
-        alert('Please log in to add items to your cart.');
-        return;
-      }
-  
-      const user = users.find((u) => u.username === loggedInUser.username);
-  
-      if (!user) {
-        alert('User not found.');
-        return;
-      }
-  
-      // Get product details from data attributes
-      const product = {
-        id: this.getAttribute('data-id'),
-        name: this.getAttribute('data-name'),
-        price: this.getAttribute('data-price'),
-        imgSrc: this.getAttribute('data-image'),
-      };
-  
-      // Check if item is already in the cart
-      const itemExists = user.cart.some((item) => item.id === product.id);
-  
-      if (itemExists) {
-        alert('This item is already in your cart.');
-      } else {
-        // Add item to user's cart
-        user.cart.push(product);
-        // Update users in localStorage
-        localStorage.setItem('users', JSON.stringify(users));
-        alert(`${product.name} has been added to your cart.`);
-      }
-    });
+  button.addEventListener('click', function () {
+    // Get current user
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    if (!loggedInUser) {
+      alert('Please log in to add items to your cart.');
+      return;
+    }
+
+    const user = users.find((u) => u.username === loggedInUser.username);
+
+    if (!user) {
+      alert('User not found.');
+      return;
+    }
+
+    // Get product details from data attributes
+    const product = {
+      id: this.getAttribute('data-id'),
+      name: this.getAttribute('data-name'),
+      price: this.getAttribute('data-price'),
+      imgSrc: this.getAttribute('data-image'),
+      quantity: 1
+    };
+
+    // Add item to user's cart
+    user.cart.push(product);
+    
+    // Update users in localStorage
+    localStorage.setItem('users', JSON.stringify(users));
+    alert(`${product.name} has been added to your cart.`);
   });
+});
   
   // Function 5: Update Navbar on Page Load
   document.addEventListener('DOMContentLoaded', () => {
@@ -179,16 +176,4 @@ document.querySelectorAll('.add-to-cart').forEach((button) => {
   });
 
 
-
-  document.getElementById('checkout-button').addEventListener('click', () => {
-    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const user = users.find(u => u.username === loggedInUser?.username);
-
-    if (!user?.cart || user.cart.length === 0) {
-        alert('Please add items to your cart before proceeding to checkout.');
-        return;
-    }
-    
-    window.location.href = 'checkout.html';
-});
+  
