@@ -144,56 +144,43 @@
     background-color: #0056b3;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1440px){
+/* Media Query for Laptop Screens */
+@media screen and (max-width: 1440px) {
     .modal-content {
-        height: 100%;
+        width: 90%;
+        max-width: 700px;
+        padding: 15px;
+        margin: 20px auto;
     }
+
+    .form-container {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .modal-banner {
+        margin-bottom: 20px;
+    }
+
     .modal-banner h2 {
         font-size: 1.5rem;
-    }   
-}
-
-@media screen and (max-width: 1440px) {
-    /* Laptop Screens */
-    .modal-content {
-        max-width: 70%;
-        max-height: 80vh;
-        overflow-y: auto;
-        padding: 1.5rem;
     }
 
-    .product-details__header {
-        flex-direction: row;
-        gap: 1.5rem;
+    .modal-banner p {
+        font-size: 0.9rem;
     }
 
-    .product-details__image {
-        width: 250px;
-        height: auto;
-        object-fit: contain;
+    .modal-logo {
+        width: 80px;
     }
 
-    .product-details__title {
-        font-size: 1.8rem;
+    .form-container input,
+    .form-container select {
+        padding: 8px;
+        margin-bottom: 8px;
     }
 
-    .specs-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    /* Scrollbar styling for modal content */
-    .modal-content::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .modal-content::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-    }
-
-    .modal-content::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 4px;
+    .form-container button {
+        padding: 8px;
     }
 }

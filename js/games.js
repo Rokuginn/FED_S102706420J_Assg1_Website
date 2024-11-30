@@ -347,18 +347,3 @@ function setupAddToCartButton(button) {
         alert('Added to cart!');
     });
 }
-/* Add this to your JavaScript */
-function toggleModalScroll() {
-    document.body.classList.toggle('modal-open');
-}
-// Add when opening modal
-document.querySelectorAll('.product__item').forEach(item => {
-    item.addEventListener('click', () => {
-        document.body.classList.add('modal-open');
-    });
-});
-
-// Remove when closing modal
-document.getElementById('close-product-modal').addEventListener('click', () => {
-    document.body.classList.remove('modal-open');
-});
