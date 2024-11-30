@@ -1,3 +1,4 @@
+// Checkout Function
 document.addEventListener('DOMContentLoaded', () => {
     // Load cart items from localStorage
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));

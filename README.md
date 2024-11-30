@@ -76,6 +76,21 @@ The design choices for this website were made to closely align with the aestheti
 - **CSS3**: For styling and layout, including animations.  
 - **JavaScript**: To add interactivity and dynamic features.
 
+## 💻💻 References/Credits/Tutorials
+- **Gradient CSS Colors**: https://uigradients.com
+- **Animated Color Gradient Background**: https://www.sliderrevolution.com/resources/css-animated-background/
+- **Image Slider Inspiration**:https://www.youtube.com/watch?v=McPdzhLRzCg
+- **Home Page Inspiration**: https://www.youtube.com/watch?v=FazgJVnrVuI&t=430s
+- **Hamburger Menu and navbar**: https://www.youtube.com/watch?v=FazgJVnrVuI&t=430s
+- **Game Images and Devices**: https://www.playstation.com/en-sg/
+- **Color Shell Images**: https://www.amazon.com/en-sg/
+- **PlayStation Logo**: https://worldvectorlogo.com/\
+- **Add to cart**:https://www.youtube.com/watch?v=gXWohFYrI0M
+- **Sign Up/Log In**: https://www.youtube.com/watch?v=bVl5_UdcAy0
+- **Checkout**:https://www.youtube.com/watch?v=-gEV3znqu8E&pp=ygUcaHRtbCBjc3MgamF2YXNjcmlwdCBjaGVja291dA%3D%3D
+
+
+
 ## 📌 How to Use
 1. Clone the repository:
    ```bash

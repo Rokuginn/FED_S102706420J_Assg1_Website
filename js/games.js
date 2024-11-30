@@ -1,4 +1,4 @@
-// Create games.js
+// Genre Card Function
 document.addEventListener('DOMContentLoaded', () => {
     const genreFilter = document.getElementById('genre-filter');
     const searchInput = document.getElementById('game-search');
@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setupAddToCartButton(button);
     });
 
-    // Optional: Add debounce to search for better performance
     function debounce(func, wait) {
         let timeout;
         return function executedFunction(...args) {

@@ -11,7 +11,7 @@ const mobileMenu = () => {
 
 menu.addEventListener('click', mobileMenu);
 
-// Function 6: Hero Slider
+// Function 2: Hero Slider
 document.addEventListener('DOMContentLoaded', () => {
   // Hero Slider functionality
   const slides = document.querySelectorAll('.hero-slide');
