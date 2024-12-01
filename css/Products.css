@@ -160,7 +160,7 @@
 }
 
 
-/* Products Section */
+/* products Section */
 .products {
   padding: 30px;
   max-width: 1700px;
@@ -502,7 +502,7 @@
     font-weight: 500;
     font-family: "Open Sans", sans-serif;
   }
-  /* Products grid adjustments */
+  /* products grid adjustments */
   .products__container {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 15px;
