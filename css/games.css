@@ -617,8 +617,21 @@
     .prev-slide {
         left: 1rem;
     }
+    .hero-slide{
+      height: 100vh;
+    }
 
     .next-slide {
         right: 1rem;
+    }
+    .hero-image{
+      height: 100%;
+      width: 100%;
+    }
+    .hero-image img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center
     }
 }
